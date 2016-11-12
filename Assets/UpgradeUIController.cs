@@ -4,6 +4,8 @@ using System.Collections;
 
 public class UpgradeUIController : MonoBehaviour {
 
+	public ResourceController resourceController;
+
 	public Text tapDamageTitle;
 	public Text tapDamageLevel;
 	public Text tapDamagePrice;
@@ -32,16 +34,16 @@ public class UpgradeUIController : MonoBehaviour {
 
 	void UpdateUIValues ()
 	{
-		tapDamageLevel.text = "Level " + ResourceController.damageUpgradeLevel;
-		tapDamagePrice.text = ResourceController.damageUpgradeCostBase.ToString();
+		tapDamageLevel.text = "Level " + resourceController.damageUpgradeLevel;
+		tapDamagePrice.text = resourceController.damageUpgradeCostBase.ToString();
 
-		moneyPerBrickLevel.text = "Level " + ResourceController.moneyPerBrickUpgradeLevel;
-		//moneyPerBrickPrice.text = ResourceController.moneyPerBrickUpgradePrice;
+		moneyPerBrickLevel.text = "Level " + resourceController.moneyPerBrickUpgradeLevel;
+		//moneyPerBrickPrice.text = resourceController.moneyPerBrickUpgradePrice;
 
-		shakeDamageLevel.text = "Level " + ResourceController.skill1DamageUpgradeLevel;
+		shakeDamageLevel.text = "Level " + resourceController.skill1DamageUpgradeLevel;
 		//shakeDamagePrice.text = 
 
-		shakeTimeLevel.text = "Level " + ResourceController.skill1RechargeUpgradeLevel;
+		shakeTimeLevel.text = "Level " + resourceController.skill1RechargeUpgradeLevel;
 		//shakeTimePrice.text =
 	}
 }

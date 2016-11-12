@@ -5,14 +5,14 @@ public class ResourceController : MonoBehaviour {
 
 	//Money
 	[Header("Money")]
-	public static int moneyAmount;
-	public static int initialMoney;
+	public int moneyAmount;
+	public int initialMoney;
 
-	public static int moneyPerBrickUpgradeLevel;
-	public static int moneyPerBrickUpgrageBase;
-	public static float moneyPerBrickUpgradeMultiplier;
-	public static int moneyPerBrickUpgradeCostBase;
-	public static float moneyPerBrickUpgradeCostMultiplier;
+	public int moneyPerBrickUpgradeLevel;
+	public int moneyPerBrickUpgrageBase;
+	public float moneyPerBrickUpgradeMultiplier;
+	public int moneyPerBrickUpgradeCostBase;
+	public float moneyPerBrickUpgradeCostMultiplier;
 
 	//TODO: XP - Leveling up and stuff...
 	//public int level;
@@ -25,79 +25,109 @@ public class ResourceController : MonoBehaviour {
 
 	//Damage
 	[Header("Damage")]
-	public static int damageUpgradeLevel;
-	public static int damageUpgrageBase;
-	public static float damageUpgradeMultiplier;
-	public static int damageUpgradeCostBase; 
-	public static float damageUpgradeCostMultiplier;
+	public int damageUpgradeLevel;
+	public int damageUpgrageBase;
+	public float damageUpgradeMultiplier;
+	public int damageUpgradeCostBase;
+	public float damageUpgradeCostMultiplier;
 
 	//Skill
 	[Header("Skill")]
-	public static int skill1DamageUpgradeLevel;
-	public static int skill1DamageUpgradeBase;
-	public static int skill1DamageUpgradeMultiplier;
-	public static int skill1DamageUpgradeCostBase;
-	public static int skill1DamageUpgradeCostMultiplier;
+	public int skill1DamageUpgradeLevel;
+	public int skill1DamageUpgradeBase;
+	public int skill1DamageUpgradeMultiplier;
+	public int skill1DamageUpgradeCostBase;
+	public int skill1DamageUpgradeCostMultiplier;
 
-	public static int skill1RechargeUpgradeLevel;
-	public static int skill1RechargeUpgradeBase;
-	public static int skill1RechargeUpgradeMultiplier;
-	public static int skill1RechargeUpgradeCostBase;
-	public static int skill1RechargeUpgradeCostMultiplier;
+	public int skill1RechargeUpgradeLevel;
+	public int skill1RechargeUpgradeBase;
+	public int skill1RechargeUpgradeMultiplier;
+	public int skill1RechargeUpgradeCostBase;
+	public int skill1RechargeUpgradeCostMultiplier;
+
+	//Spawn
+	[Header("Spawn")]
+	public float spawnInterval;
+
+	//Block
+	[Header("Block")]
+	private int blocksDestroyed;
+	public int blocksDestroyedPerLevel;
+	public int blockMinHealthBase;
+	public int blockMinHealthMultiplier;
+	public int blockMaxHealthBase;
+	public int blockMaxHealthMultiplier;
+
+	//Game Over
+	[Header("Game Over")]
+	public float gameOverThreshold;
 
 
 	//Get methods:
-	int getMoneyPerBrick ()
+	public int getMoneyPerBrick ()
 	{
 		return 10; //Fixed for now...
 	}
 
-	int getMoneyPerBrickUpgradePrice ()
+	public int getMoneyPerBrickUpgradePrice ()
 	{
 		return 10; //Fixed for now...
 	}
 
-	int getDamage ()
+	public int getDamage ()
 	{
 		return 10; //Fixed for now...
 	}
 
-	int getDamageUpgradePrice ()
+	public int getDamageUpgradePrice ()
 	{
 		return 10; //Fixed for now...
 	}
 
-
-	int getSkill1Damage ()
+	public int getSkill1Damage ()
 	{
 		return 10; //Fixed for now...
 	}
 
-	int getSkill1DamageUpgradePrice ()
+	public int getSkill1DamageUpgradePrice ()
 	{
 		return 10; //Fixed for now...
 	}
 
-	int getSkill1Recharge ()
+	public int getSkill1Recharge ()
 	{
 		return 10; //Fixed for now...
 	}
 
-	int getSkill1RechargeUpgradePrice ()
+	public int getSkill1RechargeUpgradePrice ()
 	{
 		return 10; //Fixed for now...
 	}
 
+	// Block methods
 
+	public void incrementBlocksDestroyed ()
+	{
+		blocksDestroyed++;
+	}
+
+	public int getBlockMinHealth ()
+	{
+		return blockMinHealthBase + blockMinHealthMultiplier * (blocksDestroyed / blocksDestroyedPerLevel);
+	}
+	public int getBlockMaxHealth ()
+	{
+		return blockMaxHealthBase + blockMaxHealthMultiplier * (blocksDestroyed / blocksDestroyedPerLevel);
+	}
 
 	//Change Money inventory
 
-	void addMoney ()
+	public void addMoney ()
 	{
 		moneyAmount += getMoneyPerBrick();
 	}
 
-	void buyUpgrade ()
+	public void buyUpgrade ()
 	{
 		//TODO: for later!
 	}

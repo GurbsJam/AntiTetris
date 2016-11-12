@@ -4,9 +4,8 @@ using System.Collections;
 
 public class GameController : MonoBehaviour {
 
+	public ResourceController resourceController;
 	public Spawner[] spawners;
-	public float spawnInterval;
-	public float gameOverThreshold;
 
 	[Header("Boundaries")]
 	public GameObject upperBoundary;
@@ -26,7 +25,7 @@ public class GameController : MonoBehaviour {
 		leftBoundaryCollider = leftBoundary.GetComponent<Collider2D>();
 		rightBoundaryCollider = rightBoundary.GetComponent<Collider2D>();
 
-		InvokeRepeating("Spawn", 0, spawnInterval);
+		InvokeRepeating("Spawn", 0, resourceController.spawnInterval);
 	}
 
 	void Spawn () {

@@ -32,6 +32,7 @@ public class Tetromino : MonoBehaviour {
 		if (health <= 0) {
 			gameObject.SetActive(false);
 			spawner.RecycleObject(gameObject);
+			gameController.resourceController.incrementBlocksDestroyed();
 		} else {
 			UpdateSprite();
 		}
@@ -61,7 +62,7 @@ public class Tetromino : MonoBehaviour {
 	void OnTriggerStay2D (Collider2D collider) {
 		if (collider.gameObject == gameController.upperBoundary) {
 			gameOverCountdown += Time.deltaTime;
-			if (gameOverCountdown >= gameController.gameOverThreshold) {
+			if (gameOverCountdown >= gameController.resourceController.gameOverThreshold) {
 				gameController.GameOver();	
 			}
 		}
