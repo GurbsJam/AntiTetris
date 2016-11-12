@@ -11,7 +11,7 @@ public abstract class Spawner : MonoBehaviour {
 		deadObjects = new ArrayList();
 	}
 
-	public GameObject SpawnObject () {
+	public GameObject SpawnObject (GameController gameController) {
 		GameObject gameObject;
 
 		if (deadObjects.Count > 0) {
@@ -21,7 +21,7 @@ public abstract class Spawner : MonoBehaviour {
 			gameObject = CreateGameObject();
 		}
 
-		BindGameObject(gameObject, liveObjects.Count);
+		BindGameObject(gameObject, liveObjects.Count, gameController);
 		liveObjects.Add(gameObject);
 
 		return gameObject;
@@ -35,6 +35,6 @@ public abstract class Spawner : MonoBehaviour {
 	}
 
 	public abstract GameObject CreateGameObject();
-	public abstract void BindGameObject(GameObject gameObject, int position);
+	public abstract void BindGameObject(GameObject gameObject, int position, GameController gameController);
 
 }

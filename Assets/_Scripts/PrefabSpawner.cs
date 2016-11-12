@@ -9,8 +9,9 @@ public class PrefabSpawner : Spawner {
 		return (GameObject) Instantiate(prefab);
 	}
 
-	override public void BindGameObject(GameObject gameObject, int position) {
+	override public void BindGameObject(GameObject gameObject, int position, GameController gameController) {
 		Tetromino tetromino = gameObject.GetComponent<Tetromino>();
+		tetromino.SetGameController(gameController);
 		tetromino.SetSpawner(this);
 		tetromino.SetHealth(1);
 
