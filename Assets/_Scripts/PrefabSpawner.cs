@@ -11,9 +11,7 @@ public class PrefabSpawner : Spawner {
 
 	override public void BindGameObject(GameObject gameObject, int position, GameController gameController) {
 		Tetromino tetromino = gameObject.GetComponent<Tetromino>();
-		tetromino.SetGameController(gameController);
-		tetromino.SetSpawner(this);
-		tetromino.SetHealth(1);
+		tetromino.Reset(gameController, this, Random.Range(1, 5));
 
 		gameObject.transform.position = Vector3.zero;
 		gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;

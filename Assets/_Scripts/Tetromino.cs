@@ -3,30 +3,53 @@ using System.Collections;
 
 public class Tetromino : MonoBehaviour {
 
+	private const float STATE_1_MIN_HEALTH = 0.6f;
+	private const float STATE_2_MIN_HEALTH = 0.3f;
+
+	[Header("Sprites")]
+	public Sprite state1Sprite;
+	public Sprite state2Sprite;
+	public Sprite state3Sprite;
+
 	private GameController gameController;
 	private Spawner spawner;
 	private int health;
+	private int fullHealth;
 	private float gameOverCountdown;
 
-	public void SetGameController(GameController gameController) {
+	public void Reset(GameController gameController, Spawner spawner, int fullHealth) {
 		this.gameController = gameController;
-	}
-
-	public void SetSpawner(Spawner spawner) {
 		this.spawner = spawner;
+		this.health = fullHealth;
+		this.fullHealth = fullHealth;
+
+		UpdateSprite();
 	}
 
-	public void SetHealth(int health) {
-		this.health = health;
-	}
-
-	void OnMouseDown () {
-		health -= 1;
+	public void DoDamage(int damage) {
+		health -= damage;
 
 		if (health <= 0) {
 			gameObject.SetActive(false);
 			spawner.RecycleObject(gameObject);
+		} else {
+			UpdateSprite();
 		}
+	}
+
+	private void UpdateSprite() {
+		float healthPercentage = ((float) health) / fullHealth;
+		if (healthPercentage >= STATE_1_MIN_HEALTH) {
+			gameObject.GetComponent<SpriteRenderer>().sprite = state1Sprite;
+		} else if (healthPercentage >= STATE_2_MIN_HEALTH) {
+			gameObject.GetComponent<SpriteRenderer>().sprite = state2Sprite;
+		} else {
+			gameObject.GetComponent<SpriteRenderer>().sprite = state3Sprite;
+		}
+	}
+
+	void OnMouseDown () {
+		DoDamage(1);
 	}
 
 	void OnTriggerEnter2D (Collider2D collider) {
