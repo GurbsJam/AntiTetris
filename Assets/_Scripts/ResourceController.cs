@@ -35,12 +35,14 @@ public class ResourceController : MonoBehaviour {
 	//Skill
 	[Header("Skill")]
 	public static int skill1Damage;
+	public static int skill1DamageUpgradeLevel;
 	public static int skill1DamageUpgradeBase;
 	public static int skill1DamageUpgradeMultiplier;
 	public static int skill1DamageUpgradeCostBase;
 	public static int skill1DamageUpgradeCostMultiplier;
 
 	public static int skill1Recharge;
+	public static int skill1RechargeUpgradeLevel;
 	public static int skill1RechargeUpgradeBase;
 	public static int skill1RechargeUpgradeMultiplier;
 	public static int skill1RechargeUpgradeCostBase;

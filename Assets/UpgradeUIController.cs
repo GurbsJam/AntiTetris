@@ -33,15 +33,15 @@ public class UpgradeUIController : MonoBehaviour {
 	void UpdateUIValues ()
 	{
 		tapDamageLevel.text = "Level " + ResourceController.damageUpgradeLevel;
-		tapDamageLevel.text = ResourceController.damageUpgradeCostBase;
+		tapDamagePrice.text = ResourceController.damageUpgradeCostBase.ToString();
 
 		moneyPerBrickLevel.text = "Level " + ResourceController.moneyPerBrickUpgradeLevel;
-		moneyPerBrickPrice.text =
+		//moneyPerBrickPrice.text = ResourceController.moneyPerBrickUpgradePrice;
 
-		shakeDamageLevel.text = "Level " + ResourceController.
-		shakeDamagePrice.text = 
+		shakeDamageLevel.text = "Level " + ResourceController.skill1DamageUpgradeLevel;
+		//shakeDamagePrice.text = 
 
-		shakeTimeLevel.text = "Level " + ResourceController.
-		shakeTimePrice.text =
+		shakeTimeLevel.text = "Level " + ResourceController.skill1RechargeUpgradeLevel;
+		//shakeTimePrice.text =
 	}
 }
