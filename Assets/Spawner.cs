@@ -11,15 +11,6 @@ public abstract class Spawner : MonoBehaviour {
 		deadObjects = new ArrayList();
 	}
 
-	void Update () {
-		for (int i = liveObjects.Count - 1; i >= 0; --i) {
-			GameObject gameObject = (GameObject) liveObjects[i];
-			if (gameObject.activeSelf) {
-				//RecycleObject(gameObject);
-			}
-		}
-	}
-
 	public GameObject SpawnObject () {
 		GameObject gameObject;
 
@@ -36,7 +27,7 @@ public abstract class Spawner : MonoBehaviour {
 		return gameObject;
 	}
 
-	private void RecycleObject (GameObject gameObject) {
+	public void RecycleObject (GameObject gameObject) {
 		if (liveObjects.Contains(gameObject)) {
 			liveObjects.Remove(gameObject);
 			deadObjects.Add(gameObject);
