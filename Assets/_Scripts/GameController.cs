@@ -40,10 +40,6 @@ public class GameController : MonoBehaviour {
 		float maxX = rightBoundary.transform.position.x - rightBoundaryCollider.bounds.extents.x - gameObjectCollider.bounds.extents.x;
 		position.Set(Random.Range(minX, maxX), transform.position.y, 0);
 		gameObject.transform.position = position;
-
-		print("Game object: " + gameObject.transform.position);
-		print("Left boundary: " + leftBoundary.transform.position);
-		print("Right boundary: " + rightBoundary.transform.position);
 	}
 
 	public void GameOver () {

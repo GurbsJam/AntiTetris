@@ -91,9 +91,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f09908512dae4c02ad149fd5ad9eb52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state1Sprite: {fileID: 0}
-  state2Sprite: {fileID: 0}
-  state3Sprite: {fileID: 0}
+  state1Sprite: {fileID: 21300000, guid: f9b9d0b510cd242d8a7773c88f0a3e4d, type: 3}
+  state2Sprite: {fileID: 21300000, guid: 30675ec68f4d74d4ca23b321e42916d7, type: 3}
+  state3Sprite: {fileID: 21300000, guid: dec8078a530f847da86841f74eeaced2, type: 3}
 --- !u!212 &212000010080115916
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -123,7 +123,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: db882eb53faf1466b8638caea5aae8fe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f9b9d0b510cd242d8a7773c88f0a3e4d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
