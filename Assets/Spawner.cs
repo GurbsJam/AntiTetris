@@ -1,44 +1,39 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Spawner : MonoBehaviour {
-
-	public IAdapter adapter;
+public abstract class Spawner : MonoBehaviour {
 
 	private ArrayList liveObjects;
 	private ArrayList deadObjects;
 
-	// Use this for initialization
 	void Start () {
 		liveObjects = new ArrayList();
 		deadObjects = new ArrayList();
-
-		InvokeRepeating("SpawnObject", 0, 2);
 	}
 
-	// Update is called once per frame
 	void Update () {
 		for (int i = liveObjects.Count - 1; i >= 0; --i) {
 			GameObject gameObject = (GameObject) liveObjects[i];
-			Renderer renderer = (Renderer) gameObject.GetComponent(typeof(Renderer));
-			if (renderer && !renderer.isVisible) {
-				RecycleObject(gameObject);
+			if (gameObject.activeSelf) {
+				//RecycleObject(gameObject);
 			}
 		}
 	}
 
-	private void SpawnObject () {
+	public GameObject SpawnObject () {
 		GameObject gameObject;
 
 		if (deadObjects.Count > 0) {
 			gameObject = (GameObject) deadObjects[0];
 			deadObjects.RemoveAt(0);
 		} else {
-			gameObject = adapter.CreateGameObject();
+			gameObject = CreateGameObject();
 		}
 
-		adapter.BindGameObject(gameObject, liveObjects.Count);
+		BindGameObject(gameObject, liveObjects.Count);
 		liveObjects.Add(gameObject);
+
+		return gameObject;
 	}
 
 	private void RecycleObject (GameObject gameObject) {
@@ -48,11 +43,7 @@ public class Spawner : MonoBehaviour {
 		}
 	}
 
-	public abstract class IAdapter : MonoBehaviour {
-
-		GameObject CreateGameObject();
-		void BindGameObject(GameObject gameObject, int position);
-
-	}
+	public abstract GameObject CreateGameObject();
+	public abstract void BindGameObject(GameObject gameObject, int position);
 
 }
