@@ -50,7 +50,7 @@ public class Tetromino : MonoBehaviour {
 	}
 
 	void OnMouseDown () {
-		DoDamage(1);
+		DoDamage(gameController.resourceController.getDamage());
 	}
 
 	void OnTriggerEnter2D (Collider2D collider) {
