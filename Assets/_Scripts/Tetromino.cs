@@ -32,6 +32,7 @@ public class Tetromino : MonoBehaviour {
 		if (health <= 0) {
 			gameObject.SetActive(false);
 			spawner.RecycleObject(gameObject);
+			gameController.resourceController.addMoney();
 			gameController.resourceController.incrementBlocksDestroyed();
 		} else {
 			UpdateSprite();
