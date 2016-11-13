@@ -38,7 +38,7 @@ public class GameController : MonoBehaviour {
 		Collider2D gameObjectCollider = gameObject.GetComponent<Collider2D>();
 		float minX = leftBoundary.transform.position.x + leftBoundaryCollider.bounds.extents.x + gameObjectCollider.bounds.extents.x;
 		float maxX = rightBoundary.transform.position.x - rightBoundaryCollider.bounds.extents.x - gameObjectCollider.bounds.extents.x;
-		position.Set(Random.Range(minX, maxX), transform.position.y, 0);
+		position.Set(Random.Range(minX, maxX), spawners[0].transform.position.y, 0);
 		gameObject.transform.position = position;
 	}
 
