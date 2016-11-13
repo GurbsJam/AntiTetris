@@ -111,6 +111,11 @@ public class ResourceController : MonoBehaviour {
 		blocksDestroyed++;
 	}
 
+	public int getBlocksDestroyed ()
+	{
+		return blocksDestroyed;
+	}
+
 	public int getBlockMinHealth ()
 	{
 		return blockMinHealthBase + blockMinHealthMultiplier * (blocksDestroyed / blocksDestroyedPerLevel);
