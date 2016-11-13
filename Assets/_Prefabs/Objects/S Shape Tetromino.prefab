@@ -127,9 +127,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f09908512dae4c02ad149fd5ad9eb52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state1Sprite: {fileID: 0}
-  state2Sprite: {fileID: 0}
-  state3Sprite: {fileID: 0}
+  state1Sprite: {fileID: 21300000, guid: 7550ec0fe1fa7496cb2231efd2975b72, type: 3}
+  state2Sprite: {fileID: 21300000, guid: 308dad2f8bff74e24aa961c76e9f5b1b, type: 3}
+  state3Sprite: {fileID: 21300000, guid: 23125c8a60c814d26bab6687b24e07d6, type: 3}
 --- !u!212 &212000010080115916
 SpriteRenderer:
   m_ObjectHideFlags: 1

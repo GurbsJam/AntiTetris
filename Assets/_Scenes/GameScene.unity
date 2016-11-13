@@ -131,6 +131,68 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1000012908249052, guid: c2d0fba2b834b460ba0bf9491dbbe14c, type: 2}
+--- !u!1 &150411885
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 150411886}
+  - 212: {fileID: 150411887}
+  m_Layer: 0
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &150411886
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 150411885}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -7, z: 10}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 202563878}
+  m_RootOrder: 0
+--- !u!212 &150411887
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 150411885}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedWireframeHidden: 1
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 2390573067549411ba07303cf90dda65, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
 --- !u!1 &191923665
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,12 +292,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 191923665}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -5, z: 0}
+  m_LocalPosition: {x: 0, y: -15, z: 0}
   m_LocalScale: {x: 100, y: 0.1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 202563878}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &202563877
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,10 +320,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 202563877}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -10, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 150411886}
   - {fileID: 1517905011}
   - {fileID: 865855614}
   - {fileID: 1625385452}
@@ -309,47 +372,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1000012908249052, guid: d870826b7f3054b4494ff1ecd21d5197, type: 2}
---- !u!114 &770019071
+--- !u!114 &770019071 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 114000010723009416, guid: da4bf22e23689476eaa9481fe12fa45b,
     type: 2}
   m_PrefabInternal: {fileID: 1336123371}
-  m_GameObject: {fileID: 1828833269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d8d18794d5b5469ebadf1f8bce7dd23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moneyAmount: 0
-  initialMoney: 10
-  moneyPerBrickUpgradeLevel: 0
-  moneyPerBrickUpgrageBase: 1
-  moneyPerBrickUpgradeMultiplier: 1.33
-  moneyPerBrickUpgradeCostBase: 50
-  moneyPerBrickUpgradeCostMultiplier: 1.3
-  damageUpgradeLevel: 0
-  damageUpgrageBase: 1
-  damageUpgradeMultiplier: 1.3
-  damageUpgradeCostBase: 50
-  damageUpgradeCostMultiplier: 1.3
-  skill1DamageUpgradeLevel: 0
-  skill1DamageUpgradeBase: 0
-  skill1DamageUpgradeMultiplier: 0
-  skill1DamageUpgradeCostBase: 0
-  skill1DamageUpgradeCostMultiplier: 0
-  skill1RechargeUpgradeLevel: 0
-  skill1RechargeUpgradeBase: 0
-  skill1RechargeUpgradeMultiplier: 0
-  skill1RechargeUpgradeCostBase: 0
-  skill1RechargeUpgradeCostMultiplier: 0
-  spawnInterval: 0.5
-  blocksDestroyedPerLevel: 10
-  blockMinHealthBase: 1
-  blockMinHealthMultiplier: 0
-  blockMaxHealthBase: 5
-  blockMaxHealthMultiplier: 0
-  gameOverThreshold: 5
 --- !u!1 &865855611
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,7 +482,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 202563878}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &937681040
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,29 +744,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114000010723009416, guid: da4bf22e23689476eaa9481fe12fa45b,
-        type: 2}
-      propertyPath: blocksDestroyedPerLevel
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010723009416, guid: da4bf22e23689476eaa9481fe12fa45b,
-        type: 2}
-      propertyPath: blockMaxHealthBase
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010723009416, guid: da4bf22e23689476eaa9481fe12fa45b,
-        type: 2}
-      propertyPath: gameOverThreshold
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010723009416, guid: da4bf22e23689476eaa9481fe12fa45b,
-        type: 2}
-      propertyPath: spawnInterval
-      value: 0.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: da4bf22e23689476eaa9481fe12fa45b, type: 2}
-  m_RootGameObject: {fileID: 1828833269}
   m_IsPrefabParent: 0
 --- !u!1 &1517905010
 GameObject:
@@ -764,12 +771,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1517905010}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalPosition: {x: 0, y: -6, z: 0}
   m_LocalScale: {x: 100, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 202563878}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!61 &1517905012
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -921,7 +928,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 202563878}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &1725135981
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,37 +970,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1000012908249052, guid: d66db8514e19b4a01ae54af361eccfb2, type: 2}
---- !u!1 &1828833269
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1000011695471090, guid: da4bf22e23689476eaa9481fe12fa45b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1336123371}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1828833270}
-  - 114: {fileID: 770019071}
-  m_Layer: 0
-  m_Name: ResourceController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1828833270
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4000013624628184, guid: da4bf22e23689476eaa9481fe12fa45b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1336123371}
-  m_GameObject: {fileID: 1828833269}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
 --- !u!1 &2033255310
 GameObject:
   m_ObjectHideFlags: 0
