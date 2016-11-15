@@ -8,9 +8,6 @@ public class HudUIController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		string blocksDestroyed = resourceController.getBlocksDestroyed().ToString();
-		print("Blocks destroyed: " + blocksDestroyed);
-
-		gameObject.GetComponent<Text>().text = blocksDestroyed;
+		gameObject.GetComponent<Text>().text = resourceController.getBlocksDestroyed().ToString();
 	}
 }
